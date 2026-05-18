@@ -2,31 +2,31 @@ const facts = [
   {
     title: "A Especiaria",
     description: "A canela é uma das especiarias mais antigas conhecidas pelo homem. Era tão valiosa na antiguidade que chegava a ser mais preciosa que o ouro! Ela é extraída da casca interna de árvores do gênero Cinnamomum.",
-    image: "/stick.png",
+    image: "./stick.png",
     url: "https://pt.wikipedia.org/wiki/Canela"
   },
   {
     title: "Cidade de Canela - RS",
     description: "Canela é um famoso município turístico da Serra Gaúcha no Brasil. Curiosamente, seu nome não vem da especiaria, mas de uma antiga árvore 'caneleira' que ficava no centro e servia de ponto de encontro para tropeiros.",
-    image: "/city.png",
+    image: "./city.png",
     url: "https://pt.wikipedia.org/wiki/Canela_(Rio_Grande_do_Sul)"
   },
   {
     title: "Magia e Misticismo",
     description: "Na cultura popular e misticismo, a canela é frequentemente associada à atração de prosperidade, sucesso e amor. Soprar canela na porta de casa no primeiro dia do mês é uma simpatia muito comum no Brasil!",
-    image: "/magical.png",
+    image: "./magical.png",
     url: "https://pt.wikipedia.org/wiki/Canela#Usos_e_cren%C3%A7as"
   },
   {
     title: "Canela vs Cássia",
     description: "Você sabia que a maior parte da 'canela' em pó vendida no supermercado é, na verdade, Cássia? A canela verdadeira (Cinnamomum verum) é mais doce e quebradiça, originária do Sri Lanka.",
-    image: "/stick.png",
+    image: "./stick.png",
     url: "https://pt.wikipedia.org/wiki/Canela#Canela-verdadeira_e_a_c%C3%A1ssia"
   },
   {
     title: "Povo Canela",
     description: "Os Canelas são um grupo indígena brasileiro do estado do Maranhão, pertencentes à família linguística jê. Eles se subdividem em grupos como os Ramkokamekrá e Apaniekrá.",
-    image: "/magical.png",
+    image: "./magical.png",
     url: "https://pt.wikipedia.org/wiki/Canelas_(povos_ind%C3%ADgenas)"
   }
 ];
