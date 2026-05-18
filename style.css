@@ -1,0 +1,286 @@
+:root[data-theme="light"] {
+  --bg-gradient: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+  --text-primary: #3E2723;
+  --text-secondary: #5D4037;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.3);
+  --accent-color: #D84315;
+  --accent-hover: #BF360C;
+  --shadow-color: rgba(62, 39, 35, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.15);
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #1A0D0A, #2A1510);
+  --text-primary: #FFE0B2;
+  --text-secondary: #FFCC80;
+  --card-bg: rgba(42, 21, 16, 0.6);
+  --card-border: rgba(255, 204, 128, 0.1);
+  --accent-color: #FF8A65;
+  --accent-hover: #FFAB91;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+.app-container {
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, var(--accent-color), var(--text-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 0.8s ease;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease 0.3s both;
+}
+
+.canela-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+.image-container:active {
+  transform: scale(0.95);
+}
+
+#canela-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+  transition: opacity 0.3s ease;
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.pulse-icon {
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+}
+
+.glassmorphism {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+}
+
+.fact-card {
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  animation: slideUp 0.8s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fact-card.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fact-card h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.fact-card p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.source-link {
+  display: inline-block;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.source-link:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.counter-container {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.counter-value {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Cookie Banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--glass-shadow);
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cookie-banner.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+}
+
+.cookie-banner p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.cookie-btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cookie-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}

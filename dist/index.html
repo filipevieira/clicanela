@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Clicanela</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-B3sLsa8I.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-JBtOvBs8.css">
+  </head>
+  <body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+      ☀️
+    </button>
+
+    <div class="app-container">
+      <header>
+        <h1>Projeto Clicanela</h1>
+        <p class="subtitle">Descubra o mundo mágico da canela. Clique nela!</p>
+      </header>
+
+      <main class="canela-display">
+        <div class="image-container" id="canela-btn" role="button" tabindex="0">
+          <img id="canela-image" src="" alt="Imagem de Canela" />
+          <div class="click-hint">
+            <span class="pulse-icon">👆</span> Clique na Canela!
+          </div>
+        </div>
+
+        <div class="fact-card glassmorphism">
+          <h2 id="fact-title">Carregando canela...</h2>
+          <p id="fact-desc"></p>
+          <a id="fact-source" href="#" target="_blank" rel="noopener noreferrer" class="source-link">
+            📚 Leia mais na Wikipédia
+          </a>
+        </div>
+      </main>
+
+      <footer>
+        <div class="counter-container glassmorphism">
+          <span class="counter-label">Contador de Clicanela:</span>
+          <span id="click-counter" class="counter-value">0</span>
+        </div>
+      </footer>
+    </div>
+    
+  </body>
+</html>
