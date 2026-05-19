@@ -190,12 +190,25 @@ header h1 {
   color: #fff;
 }
 
-.counter-container {
+.counters-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 3rem;
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.counter-container {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
+}
+
+.counter-container.global {
+  background: rgba(255, 138, 101, 0.15); /* Subtle highlight */
+  border-color: var(--accent-color);
 }
 
 .counter-value {
