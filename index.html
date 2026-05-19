@@ -2,7 +2,7 @@
 <html lang="pt-BR" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="./stick.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clicanela</title>
     <!-- Modern Typography -->
@@ -39,14 +39,20 @@
       </main>
 
       <footer>
-        <div class="counter-container glassmorphism">
-          <span class="counter-label">Contador de Clicanela:</span>
-          <span id="click-counter" class="counter-value">0</span>
+        <div class="counters-wrapper">
+          <div class="counter-container glassmorphism">
+            <span class="counter-label">Seus Cliques:</span>
+            <span id="click-counter" class="counter-value">0</span>
+          </div>
+          <div class="counter-container glassmorphism global">
+            <span class="counter-label">Mundial 🌍:</span>
+            <span id="global-counter" class="counter-value">...</span>
+          </div>
         </div>
       </footer>
     </div>
     <div id="cookie-banner" class="cookie-banner hide">
-      <p>🍪 Usamos cookies e armazenamento local para salvar seu tema e a quantidade de Clicanelas, melhorando sua experiência. Ao continuar, você concorda com nossa política.</p>
+      <p>🍪 <strong>LGPD & Privacidade:</strong> Utilizamos o armazenamento local do seu navegador para salvar seu tema e seus cliques pessoais. Além disso, seus cliques são somados de forma completamente anônima ao <strong>Placar Mundial</strong> (nenhum dado pessoal é coletado, apenas um "+1"). Ao clicar em "Entendi", você concorda com essa brincadeira coletiva!</p>
       <button id="accept-cookies" class="cookie-btn">Entendi e Aceito</button>
     </div>
     

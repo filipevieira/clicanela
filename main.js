@@ -40,10 +40,46 @@ const canelaBtn = document.getElementById('canela-btn');
 const themeToggle = document.getElementById('theme-toggle');
 const factCard = document.querySelector('.fact-card');
 const counterValue = document.getElementById('click-counter');
+const globalCounterValue = document.getElementById('global-counter');
 
 // Estado
 let currentFactIndex = -1;
 let clickCount = parseInt(localStorage.getItem('clicanela_count') || '0', 10);
+let globalClickCount = 0;
+
+// Atualiza o contador global na tela buscando da API
+async function fetchGlobalCount() {
+  try {
+    const res = await fetch('https://api.counterapi.dev/v1/clicanela/global_clicks');
+    const data = await res.json();
+    if (data && data.count !== undefined) {
+      globalClickCount = data.count;
+      globalCounterValue.innerText = globalClickCount;
+    }
+  } catch (error) {
+    console.error("Erro ao buscar contador global:", error);
+    globalCounterValue.innerText = "Error";
+  }
+}
+
+// Incrementa o contador global de forma transparente
+async function incrementGlobalCount() {
+  // Otimista: já atualiza a UI localmente antes da resposta
+  globalClickCount++;
+  globalCounterValue.innerText = globalClickCount;
+  
+  // Envia em background
+  fetch('https://api.counterapi.dev/v1/clicanela/global_clicks/up')
+    .then(r => r.json())
+    .then(data => {
+      // Corrige se houver descompasso (alguém clicou ao mesmo tempo)
+      if (data && data.count) {
+        globalClickCount = data.count;
+        globalCounterValue.innerText = globalClickCount;
+      }
+    })
+    .catch(err => console.error("Erro ao incrementar contador global:", err));
+}
 
 // Atualiza o contador na tela
 function updateCounter() {
@@ -83,6 +119,10 @@ canelaBtn.addEventListener('click', () => {
   clickCount++;
   localStorage.setItem('clicanela_count', clickCount.toString());
   updateCounter();
+  
+  // Atualiza o contador mundial de forma assíncrona
+  incrementGlobalCount();
+
   renderRandomCanela();
 });
 
@@ -122,6 +162,7 @@ themeToggle.addEventListener('click', () => {
 updateCounter();
 initTheme();
 renderRandomCanela();
+fetchGlobalCount();
 
 // Lógica do Cookie Banner (LGPD)
 const cookieBanner = document.getElementById('cookie-banner');
