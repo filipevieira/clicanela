@@ -175,8 +175,47 @@ function renderRandomCanela() {
   }, 300); // tempo de espera da transição CSS
 }
 
+// Explosão de Partículas
+function createCinnamonBurst(e) {
+  const numParticles = 8;
+  const rect = canelaBtn.getBoundingClientRect();
+  // Se for teclado (sem coordenadas reais do mouse), centraliza na imagem
+  const originX = e.clientX || rect.left + rect.width / 2;
+  const originY = e.clientY || rect.top + rect.height / 2;
+
+  for (let i = 0; i < numParticles; i++) {
+    const particle = document.createElement('span');
+    particle.innerText = '🍂';
+    particle.className = 'particle';
+    
+    // Calcula direção aleatória da explosão
+    const angle = Math.random() * Math.PI * 2;
+    const distance = 50 + Math.random() * 100; // voa entre 50px e 150px
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+    const rot = Math.random() * 360;
+
+    // Define CSS variables para a keyframe "burst"
+    particle.style.setProperty('--tx', `${tx}px`);
+    particle.style.setProperty('--ty', `${ty}px`);
+    particle.style.setProperty('--rot', `${rot}deg`);
+
+    // Posição inicial no clique
+    particle.style.left = `${originX - 10}px`; // ajusta o centro
+    particle.style.top = `${originY - 10}px`;
+
+    document.body.appendChild(particle);
+
+    // Remove do DOM após 1 segundo
+    setTimeout(() => {
+      particle.remove();
+    }, 1000);
+  }
+}
+
 // Clique na Canela
-canelaBtn.addEventListener('click', () => {
+canelaBtn.addEventListener('click', (e) => {
+  createCinnamonBurst(e);
   clickCount++;
   localStorage.setItem('clicanela_count', clickCount.toString());
   updateCounter();
