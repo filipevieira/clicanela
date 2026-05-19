@@ -50,7 +50,8 @@ let globalClickCount = 0;
 // Atualiza o contador global na tela buscando da API
 async function fetchGlobalCount() {
   try {
-    const res = await fetch('https://api.counterapi.dev/v1/clicanela/global_clicks');
+    // cache: 'no-store' ensures we always fetch the real-time value and not a browser cached response
+    const res = await fetch('https://api.counterapi.dev/v1/clicanela/global_clicks', { cache: 'no-store' });
     const data = await res.json();
     if (data && data.count !== undefined) {
       globalClickCount = data.count;
@@ -69,7 +70,7 @@ async function incrementGlobalCount() {
   globalCounterValue.innerText = globalClickCount;
   
   // Envia em background
-  fetch('https://api.counterapi.dev/v1/clicanela/global_clicks/up')
+  fetch('https://api.counterapi.dev/v1/clicanela/global_clicks/up', { cache: 'no-store' })
     .then(r => r.json())
     .then(data => {
       // Corrige se houver descompasso (alguém clicou ao mesmo tempo)
@@ -164,23 +165,28 @@ initTheme();
 renderRandomCanela();
 fetchGlobalCount();
 
-// Lógica do Cookie Banner (LGPD)
-const cookieBanner = document.getElementById('cookie-banner');
+// Lógica do Cookie Modal (LGPD)
+const cookieOverlay = document.getElementById('cookie-overlay');
 const acceptCookiesBtn = document.getElementById('accept-cookies');
+const rejectCookiesBtn = document.getElementById('reject-cookies');
 
 function initCookieBanner() {
   const hasAccepted = localStorage.getItem('clicanela_cookies_accepted');
   if (!hasAccepted) {
-    // Mostra o banner se não aceitou ainda
-    setTimeout(() => {
-      cookieBanner.classList.remove('hide');
-    }, 1000);
+    // Mostra o modal se não aceitou ainda e bloqueia o scroll
+    document.body.style.overflow = 'hidden';
+    cookieOverlay.classList.remove('hide');
   }
 }
 
 acceptCookiesBtn.addEventListener('click', () => {
   localStorage.setItem('clicanela_cookies_accepted', 'true');
-  cookieBanner.classList.add('hide');
+  cookieOverlay.classList.add('hide');
+  document.body.style.overflow = '';
+});
+
+rejectCookiesBtn.addEventListener('click', () => {
+  window.location.href = "https://www.google.com/search?q=Onde+posso+encontrar+canela%3F";
 });
 
 initCookieBanner();
