@@ -51,9 +51,15 @@
         </div>
       </footer>
     </div>
-    <div id="cookie-banner" class="cookie-banner hide">
-      <p>🍪 <strong>LGPD & Privacidade:</strong> Utilizamos o armazenamento local do seu navegador para salvar seu tema e seus cliques pessoais. Além disso, seus cliques são somados de forma completamente anônima ao <strong>Placar Mundial</strong> (nenhum dado pessoal é coletado, apenas um "+1"). Ao clicar em "Entendi", você concorda com essa brincadeira coletiva!</p>
-      <button id="accept-cookies" class="cookie-btn">Entendi e Aceito</button>
+    <div id="cookie-overlay" class="cookie-overlay hide">
+      <div class="cookie-modal glassmorphism">
+        <h2>🍪 Bem-vindo ao Clicanela!</h2>
+        <p><strong>LGPD & Privacidade:</strong> Utilizamos o armazenamento local do seu navegador para salvar seu tema e seus cliques pessoais. Além disso, seus cliques são somados de forma completamente anônima ao <strong>Placar Mundial</strong> (nenhum dado pessoal é coletado, apenas um "+1"). Ao aceitar, você concorda em participar dessa brincadeira coletiva!</p>
+        <div class="cookie-actions">
+          <button id="accept-cookies" class="cookie-btn">Entendi e Aceito</button>
+          <button id="reject-cookies" class="cookie-btn reject-btn">Não Aceito</button>
+        </div>
+      </div>
     </div>
     
     <script type="module" src="./main.js"></script>
