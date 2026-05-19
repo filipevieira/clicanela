@@ -28,6 +28,66 @@ const facts = [
     description: "Os Canelas são um grupo indígena brasileiro do estado do Maranhão, pertencentes à família linguística jê. Eles se subdividem em grupos como os Ramkokamekrá e Apaniekrá.",
     image: "./magical.png",
     url: "https://pt.wikipedia.org/wiki/Canelas_(povos_ind%C3%ADgenas)"
+  },
+  {
+    title: "Poder Antioxidante",
+    description: "A canela é carregada de antioxidantes poderosos, como os polifenóis. Em um estudo comparando a atividade antioxidante de 26 especiarias, a canela venceu até os superalimentos como o alho e o orégano!",
+    image: "./stick.png",
+    url: "https://pt.wikipedia.org/wiki/Canela#Aplica%C3%A7%C3%B5es"
+  },
+  {
+    title: "Múmias Egípcias",
+    description: "No antigo Egito, a canela era tão valiosa e tinha propriedades de conservação tão boas que era usada no processo de embalsamamento de múmias!",
+    image: "./magical.png",
+    url: "https://pt.wikipedia.org/wiki/Canela#Hist%C3%B3ria"
+  },
+  {
+    title: "Rotas Portuguesas",
+    description: "A busca pela canela foi um dos grandes motivos das Grandes Navegações! Os portugueses descobriram o Ceilão (atual Sri Lanka) em 1505 e dominaram o monopólio da canela por mais de um século.",
+    image: "./city.png",
+    url: "https://pt.wikipedia.org/wiki/Canela#Hist%C3%B3ria"
+  },
+  {
+    title: "Chai Indiano",
+    description: "A canela é um dos ingredientes principais do Masala Chai, a bebida tradicional indiana que mistura chá preto, leite e diversas especiarias para aquecer a alma.",
+    image: "./stick.png",
+    url: "https://pt.wikipedia.org/wiki/Masala_chai"
+  },
+  {
+    title: "Aromaterapia",
+    description: "O óleo essencial de canela é conhecido na aromaterapia por ser estimulante. Acredita-se que o seu cheiro pode melhorar o foco, a atenção e a memória!",
+    image: "./magical.png",
+    url: "https://pt.wikipedia.org/wiki/Óleo_essencial"
+  },
+  {
+    title: "Agricultura Extrema",
+    description: "A canela cresce em árvores que podem chegar a 15 metros! Mas para a colheita, elas são podadas severamente para que cresçam pequenos galhos. A casca é retirada à mão e, ao secar, enrola sozinha formando o pauzinho.",
+    image: "./stick.png",
+    url: "https://pt.wikipedia.org/wiki/Canela#Cultivo"
+  },
+  {
+    title: "Desafio da Canela",
+    description: "Nos anos 2010, viralizou o 'Desafio da Canela', onde as pessoas tentavam engolir uma colher da especiaria em pó. O aviso médico é claro: NÃO FAÇA ISSO! A canela seca a boca e pode causar asfixia grave.",
+    image: "./magical.png",
+    url: "https://pt.wikipedia.org/wiki/Desafio_da_canela"
+  },
+  {
+    title: "O Pássaro Cinnamologus",
+    description: "O historiador grego Heródoto escreveu um mito famoso: acreditava-se que a canela era guardada por pássaros gigantes (Cinnamologus) que faziam ninhos com os paus de canela em penhascos inacessíveis.",
+    image: "./city.png",
+    url: "https://en.wikipedia.org/wiki/Cinnamologus"
+  },
+  {
+    title: "Canela no Vinho Quente",
+    description: "É impossível pensar em Festas Juninas no Brasil (ou Mercados de Natal na Europa) sem o famoso Vinho Quente (ou Glühwein). A canela é a especiaria número um que dá aquele cheirinho inconfundível!",
+    image: "./stick.png",
+    url: "https://pt.wikipedia.org/wiki/Vinho_quente"
+  },
+  {
+    title: "Canela Salgada?",
+    description: "Enquanto no Brasil e nos EUA a canela é a estrela das sobremesas, no Oriente Médio e Norte da África ela é usada principalmente em pratos salgados, temperando carnes, frangos e ensopados!",
+    image: "./magical.png",
+    url: "https://pt.wikipedia.org/wiki/Culin%C3%A1ria_do_Oriente_M%C3%A9dio"
   }
 ];
 
